@@ -1,0 +1,17 @@
+{
+  "name": "forge-site",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write public/index.html",
+    "format:check": "prettier --check public/index.html",
+    "lint:html": "htmlhint public/index.html",
+    "css:purge": "node scripts/purge-css.mjs",
+    "prune:assets": "node scripts/prune-unused-assets.mjs",
+    "prune:importmap": "node scripts/prune-importmap.mjs"
+  },
+  "devDependencies": {
+    "htmlhint": "^1.7.1",
+    "prettier": "^3.5.3",
+    "purgecss": "^6.0.0"
+  }
+}
