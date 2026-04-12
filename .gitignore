@@ -16,3 +16,5 @@ npm-debug.log*
 # Local env (if you add secrets later)
 .env
 .env.local
+
+.idea/
