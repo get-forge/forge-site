@@ -2012,7 +2012,7 @@ class Visit {
       this.adapter.visitCompleted(this);
       this.state = VisitState.completed;
       this.followRedirect();
-      if (!this.followedRedirect && !this.view.forceReloaded) {
+      if (!this.followedRedirect) {
         this.delegate.visitCompleted(this);
       }
     }

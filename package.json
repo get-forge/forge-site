@@ -7,10 +7,16 @@
     "lint:html": "htmlhint public/index.html",
     "css:purge": "node scripts/purge-css.mjs",
     "prune:assets": "node scripts/prune-unused-assets.mjs",
-    "prune:importmap": "node scripts/prune-importmap.mjs"
+    "prune:importmap": "node scripts/prune-importmap.mjs",
+    "vendor:sync": "node scripts/sync-vendor-js.mjs"
   },
   "devDependencies": {
+    "@hotwired/stimulus": "3.2.2",
+    "@hotwired/turbo-rails": "8.0.4",
+    "aos": "2.3.4",
+    "es-module-shims": "1.10.0",
     "htmlhint": "^1.7.1",
+    "lazysizes": "5.3.2",
     "prettier": "^3.5.3",
     "purgecss": "^6.0.0"
   }

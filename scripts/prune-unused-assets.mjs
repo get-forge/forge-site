@@ -85,7 +85,7 @@ function bfsJsFiles(importMap) {
   }
 
   [
-    "/assets/js/es-module-shims.min-806a0b27.js",
+    "/assets/js/vendor/es-module-shims.js",
     "/assets/js/img-data-src.js",
     "/assets/js/formspree.js",
     "/assets/css/main.css",
