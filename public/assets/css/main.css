@@ -5971,7 +5971,6 @@
   }
 }
 
-/* Fixed navbar matches Better Stack archive (h-[52px]); keeps #anchor scroll positions below the header */
 html {
   scroll-padding-top: 52px;
 }

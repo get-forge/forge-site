@@ -34,17 +34,9 @@ function bfsJsFiles(importMap) {
   const entrySpecs = [
     "common/aos",
     "common/lazy",
-    "common/data-disable-with-spinner",
     "common/railsSetup",
-    "common/modals",
     "common_controllers",
-    "site/carousel",
-    "site/collapse",
-    "site/gallery",
     "site/menu",
-    "site/slide",
-    "site/toggle",
-    "site/search",
     "common/site_settings_bootstrap",
     "common/site_settings_panel",
   ];
