@@ -1,4 +1,14 @@
-import AOS from 'aos'
+// `vendor/aos.js` is UMD with no ESM `export`. Load it in index.html (classic script) so
+// AOS is on the global, then this module can run without a failing `import` from the importmap.
+/* global AOS */
+const AOS =
+  typeof globalThis.AOS === 'object' && globalThis.AOS && typeof globalThis.AOS.init === 'function'
+    ? globalThis.AOS
+    : null
+
+if (!AOS) {
+  throw new Error('AOS: load /assets/js/vendor/aos.js (classic) before homepage-imports')
+}
 
 function initAOS() {
   AOS.init({

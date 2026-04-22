@@ -86,14 +86,15 @@
           "@hotwired/stimulus": "/assets/js/vendor/stimulus.js",
           "@hotwired/stimulus-loading": "/assets/js/vendor/stimulus-loading.js",
           "@hotwired/turbo-rails": "/assets/js/vendor/turbo-rails.js",
-          "lazysizes": "/assets/js/vendor/lazysizes.min.js",
-          "aos": "/assets/js/vendor/aos.js"
+          "lazysizes": "/assets/js/vendor/lazysizes.min.js"
         }
       }
     </script>
     <script type="esms-options" nonce="">
       {"nonce":"f806560efaf1eb6c6d549e06e14956ae"}
     </script>
+    <!-- AOS is UMD-only; a default import in ESM would abort the import graph. Load the global, then the module. -->
+    <script src="/assets/js/vendor/aos.js" defer="defer" data-turbo-track="reload" nonce=""></script>
     <script src="/assets/js/vendor/es-module-shims.js" defer="defer" data-turbo-track="reload" nonce=""></script>
     <script type="module" src="/assets/js/homepage-imports.js" nonce=""></script>
   </head>
