@@ -4,6 +4,7 @@ Static file server that also serves index.js when a path ending with /index
 is requested (no extension), so ESM resolution works for dayjs plugins.
 Serves from public/ at the repo root so /assets/ and /partials/ resolve correctly.
 """
+import http
 import http.server
 import os
 import socketserver
@@ -50,8 +51,30 @@ class StaticSiteRequestHandler(http.server.SimpleHTTPRequestHandler):
                 self.end_headers()
                 with open(local, "rb") as f:
                     self.wfile.write(f.read())
-                return
+                    return
         return http.server.SimpleHTTPRequestHandler.do_GET(self)
+
+    @staticmethod
+    def _http_status_i(code):
+        if code in (None, "", "-"):
+            return None
+        if isinstance(code, int):
+            return code
+        if isinstance(code, http.HTTPStatus):
+            return code.value
+        s = str(code)
+        p = s.split()
+        if p and p[0].isdigit():
+            return int(p[0])
+        if s.isdigit():
+            return int(s)
+        return None
+
+    def log_request(self, code="-", size="-"):
+        c = self._http_status_i(code)
+        if c in (200, 304):
+            return
+        super().log_request(code, size)
 
 
 if __name__ == "__main__":

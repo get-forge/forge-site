@@ -13,6 +13,11 @@ Thumbs.db
 npm-debug.log*
 .cache/
 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
 # Local env (if you add secrets later)
 .env
 .env.local
